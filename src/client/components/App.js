@@ -68,10 +68,6 @@ class App extends Component {
       }
     })
 
-    console.log(buttonId);
-    console.log('new Projects', newProjects);
-    console.log('new search', newSearchResults);
-
     $.ajax({
       url: '/likeProject',
       method: 'POST',
@@ -100,12 +96,10 @@ class App extends Component {
   }
 
   componentWillMount() {
-    // console.log(this.state.userId);
     if (this.state.userInfo.id === undefined) {
       $.ajax({
         url: '/user/getInfo', method: 'GET',
         success: (data) => {
-          // console.log(data);
           if (data !== null) this.setState({ userInfo: data.user, myProjects: data.projects, showDashboard: true, showSplash: false, showNavbar: true });
           else console.log('no user with that username')
         },
@@ -115,7 +109,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.userInfo);
     return (
       <div>
         <Navbar

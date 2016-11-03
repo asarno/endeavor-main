@@ -10,7 +10,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    console.log('Dashboard ', this.props.showDashboard)
     return (
       <div className="container dashboard" style={{display: (this.props.showDashboard) ? 'block' : 'none'}}>
         <div className="welcome jumbotron">
